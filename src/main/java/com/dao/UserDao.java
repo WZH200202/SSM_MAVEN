@@ -8,6 +8,8 @@ import java.util.List;
 public interface UserDao {
     List<User> selectAll();
     int insert(User user);
+
     int update(User user);
     int delete(@Param("id") int id);
+
 }
