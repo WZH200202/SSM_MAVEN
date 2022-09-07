@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.UserDao">
+
+    <select id="selectAll"  resultType="User">
+        select * from smbms_user
+    </select>
+
+    <insert id="insert" parameterType="User">
+        insert into smbms_user(id,userCode,userName) values (#{id},#{userCode},#{userName})
+    </insert>
+
+    <update id="update" parameterType="User">
+        update smbms_user set userCode=#{userCode},userName=#{userName} where id=#{id}
+    </update>
+
+    <delete id="delete" parameterType="int">
+        delete from smbms_user where id=#{id}
+    </delete>
+</mapper>
